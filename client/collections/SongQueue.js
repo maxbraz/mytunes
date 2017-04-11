@@ -5,13 +5,13 @@ var SongQueue = Backbone.Collection.extend({
 
   initialize: function() {
     this.on('add', function () {
-      this.at(0).play;
+      if (!this.at(1)) {
+        this.playFirst();
+      }
     });
   },
 
   playFirst: function() {
-    console.log('we are in PlayFirst');
-    this.models[0].play();
-    this.at(0);
+    this.at(0).play();
   } 
 });
