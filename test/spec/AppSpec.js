@@ -1,4 +1,4 @@
-describe('App', function() {
+xdescribe('App', function() {
   var app, fakeSongs;
 
   beforeEach(function() {
