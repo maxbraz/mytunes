@@ -1,16 +1,18 @@
 // Songs.js - Defines a backbone collection class for songs.
 var Songs = Backbone.Collection.extend({
   
-  initialize: function(params) {
+  model: SongModel,
+
+  initialize: function() {
     this.fetch({
       success: function() {
         console.log('Fetch was successful');
       },
       error: function(e) {
-        console.log('ERROR ERROR ERROR: ', e);
+        console.log('ERROR: ', e);
       },
       complete: function(e) {
-        console.log('Fetch complete.  You fetched: ', e);
+        console.log('You fetched: ', e);
       }
     });
   },
@@ -19,7 +21,6 @@ var Songs = Backbone.Collection.extend({
 
   parse: function(response) {
     return response.results;
-  },
+  }
 
-  model: SongModel
 });
