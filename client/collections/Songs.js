@@ -3,17 +3,18 @@ var Songs = Backbone.Collection.extend({
   
   initialize: function(params) {
     this.fetch({
-      success: function(){
-        console.log('Max is beans');
+      success: function() {
+        console.log('Fetch was successful');
       },
-      error: function(e){
-        console.log('Max is a brazzzzzzillion', e);
+      error: function(e) {
+        console.log('ERROR ERROR ERROR: ', e);
       },
-      complete: function(e){
-        console.log('Fetch complete', e);
+      complete: function(e) {
+        console.log('Fetch complete.  You fetched: ', e);
       }
     });
   },
+
   'url': 'http://parse.sfm6.hackreactor.com/mytunes/classes/songs',
 
   parse: function(response) {
@@ -21,5 +22,4 @@ var Songs = Backbone.Collection.extend({
   },
 
   model: SongModel
-
 });
