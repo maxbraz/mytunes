@@ -7,20 +7,12 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      this.model.play();
+
       this.model.enqueue();
     }
   },
 
-  //add a function that will add song to queue if a song is already playing
-   //an event listener, 
-   //if statement that listesn to see if song already playing 
-   // if nothing playing render song, 
-   // else 
-    //put song in queue
-
   render: function() {
-    //$el A handy reference instead of re-wrapping the DOM element all the time.
     return this.$el.html(this.template(this.model.attributes));
   }
 
